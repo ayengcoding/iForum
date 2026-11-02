@@ -31,17 +31,3 @@ Your package includes `Post Code Demo/feed.atom` containing pre-formatted sample
 3. Click **Import Content**.
 4. Select **`feed.atom`** from the `Post Code Demo` folder.
 5. Wait a few seconds for the import to finish, then refresh your website.
-
----
-
-## 🔑 Step 3: Activate Your Domain License (`Read Me First.txt`)
-
-1. Open your **AyengStore Account Hub** (using your Gumroad purchase email) OR open Telegram and message **[@abefilmbot](https://t.me/abefilmbot)** (or contact **[@ayengcoding](https://t.me/ayengcoding)**).
-2. In the Telegram bot, type:
-   ```text
-   /keygen yourdomain.com
-   ```
-   *(Example: `/keygen iforumofficial.blogspot.com`)*
-3. The bot will automatically generate your domain license key.
-4. In Blogger Dashboard, go to **Theme → Customize → Advanced → Theme Setup** and enter your license key, then click **Save**.
-   *(Note: Every time you change your domain, you will require a new license key, which you can generate at any time).*

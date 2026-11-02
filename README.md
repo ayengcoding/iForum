@@ -9,7 +9,7 @@
   <a href="https://firebase.google.com"><img src="https://img.shields.io/badge/Firebase-Auth%20%26%20RTDB-FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase"></a>
   <a href="https://prismjs.com"><img src="https://img.shields.io/badge/Prism.js-Code%20Highlighting-2B3A42.svg?style=for-the-badge&logo=javascript&logoColor=white" alt="Prism"></a>
   <a href="https://web.dev/progressive-web-apps/"><img src="https://img.shields.io/badge/PWA-Installable%20App-5A0FC8.svg?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA Ready"></a>
-  <a href="#"><img src="https://img.shields.io/badge/License-Domain%20Locked-00DF82.svg?style=for-the-badge&logo=security&logoColor=white" alt="License"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Edition-Premium%20Theme-00DF82.svg?style=for-the-badge&logo=security&logoColor=white" alt="License"></a>
   <a href="https://github.com/ayengcoding/iForum/releases/tag/v2.4.0"><img src="https://img.shields.io/badge/Release-v2.4.0-3B82F6.svg?style=for-the-badge&logo=github&logoColor=white" alt="v2.4.0"></a>
 </p>
 
@@ -36,7 +36,6 @@
 | [**Interactive Docs Portal (ayengcoding.github.io/iForum)**](https://ayengcoding.github.io/iForum/) | Everyone | Live web-based documentation dashboard with search, interactive guides, and feature walkthroughs. |
 | [**INSTALLATION.md**](docs/setup/installation.md) | Site Owners & Beginners | 4-step installation in Blogger (`Theme → Restore`), layout setup, and initial configuration. |
 | [**FIREBASE_SETUP.md**](docs/setup/firebase-setup.md) | Administrators | Step-by-step setup for Firebase Realtime Database rules, Google Authentication, and authorized domains. |
-| [**LICENSE_SYSTEM.md**](docs/setup/license-activation.md) | Buyers & Webmasters | Standalone HTML DJB2 Hex generator usage, Blogger Theme Setup camouflage, and activation steps. |
 | [**TYPOGRAPHY_AND_STYLING.md**](docs/features/typography-and-formatting.md) | Content Creators & Posters | Official formatting guide: Live Code Playground (Sandbox), Semantic Alerts, Accordions, Spoilers, and Download Lockers. |
 | [**COMMENTS_SYSTEM.md**](docs/features/comments-and-replies.md) | Developers & Customizers | Full structure of the modern nested comment system, sorting engine, and action triggers. |
 | [**COMMUNITY_AND_GAMIFICATION.md**](docs/features/gamification-and-badges.md) | Community Managers | Role badges (Admin, Member, Newbie), reputation score tracking, and leaderboards. |
@@ -97,9 +96,9 @@ flowchart TD
 - **Prism.js Syntax Highlighting**: Clean, readable syntax highlighting for HTML, CSS, JavaScript, Python, JSON, and Bash.
 - **Copy Code Buttons**: 1-click clipboard copy on all code blocks with feedback toast animation.
 
-### 4. Domain-Locked Licensing (DJB2)
-- **Anti-Theft Protection**: Hardened DJB2 32-bit hashing algorithm generating 6-digit hex activation keys.
-- **Blogger Theme Setup Integration**: Buyers configure their key seamlessly via `Theme → Customize → Advanced → Theme Setup` with discreet camouflage against unauthorized code tampering.
+### 4. More Advance Features & PWA Ready
+- **Progressive Web App (PWA)**: Installable mobile & desktop app experience with instant dark/light mode persistence.
+- **Engagement Content Lockers**: Built-in blur spoilers and Heart-to-Unlock download cards synced with Firebase.
 
 ---
 
@@ -114,9 +113,7 @@ flowchart TD
    - Add your blog domain (e.g., `yourforum.blogspot.com`) to Firebase **Authorized Domains**.
 3. **Insert Firebase Config**:
    - Scroll to the bottom of the theme file just above `</body>` and paste your `apiKey`, `authDomain`, `databaseURL`, and `projectId`.
-4. **Activate Theme License**:
-   - Use the standalone Key Generator tool with your domain name.
-   - Enter your 6-digit hex key in Blogger's theme customization panel.
+
 
 
 ---
@@ -129,7 +126,7 @@ flowchart TD
 - **In-Post Developer Sandbox**: Interactive live HTML, CSS, and JavaScript compiler with instant preview iframe and **Prism.js** syntax highlighting.
 - **Modern Two-Tier Nested Comments**: Rich formatting toolbar, emoji reactions, comment sorting, and verified **Best Answer** ribbons.
 - **Community Gamification Engine**: Reputation points, member rank badges (`Admin`, `Pro`, `Member`), and leaderboards.
-- **Domain-Locked Licensing (DJB2)**: 32-bit hex anti-theft activation configurable straight from Blogger's native Theme Setup UI.
+- **More Advance Features**: Progressive Web App (PWA) support, heart-locked download cards, blur spoilers, and responsive SEO schema.
 
 ---
 
@@ -142,4 +139,4 @@ Need assistance or have customization questions?
 ---
 
 ## 📄 License
-iForum is commercial theme software protected by domain-locked licensing. Unauthorized redistribution or reselling is strictly prohibited.
+iForum is commercial theme software crafted by Ayeng Coding. Unauthorized redistribution or reselling is strictly prohibited.

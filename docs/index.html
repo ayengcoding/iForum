@@ -1013,7 +1013,7 @@
           <span>General information</span>
         </div>
         <ul class="sidebar-nav-list">
-          <li><button type="button" class="sidebar-nav-btn" data-doc="license" onclick="loadDoc('license')">License &amp; Terms (DJB2)</button></li>
+          <li><button type="button" class="sidebar-nav-btn" data-doc="license" onclick="loadDoc('license')">License &amp; Terms</button></li>
           <li><button type="button" class="sidebar-nav-btn" data-doc="changelog" onclick="loadDoc('changelog')">Development &amp; Changelog</button></li>
         </ul>
       </div>
@@ -1109,8 +1109,8 @@
                 <div class="doc-card-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
                 </div>
-                <h4>Gamification &amp; DJB2 Security</h4>
-                <p>Reward community contributors with automatic reputation points and rank badges, protected by a hardened 32-bit DJB2 domain-locked licensing engine.</p>
+                <h4>Gamification &amp; More Advance Features</h4>
+                <p>Reward community contributors with automatic reputation points, 6 rank badges, PWA installable app support, and heart-locked downloads.</p>
               </div>
             </div>
 
@@ -1241,7 +1241,7 @@
         title: "Firebase Realtime Database & Auth",
         lead: "Connect iForum to Google Firebase (Free Spark Plan) to power live post views, heart reactions, 1-tap Google login, and user reputation points.",
         prev: { id: "install", title: "Quickstart & Installation" },
-        next: { id: "license", title: "License & Terms (DJB2)" },
+        next: { id: "license", title: "License & Terms" },
         html: `
           <div class="doc-section">
             <h2>1. Create a Free Firebase Project &amp; Web App</h2>
@@ -1317,40 +1317,28 @@
 
       license: {
         eyebrow: "General information",
-        title: "License & Activation (DJB2)",
-        lead: "How iForum's domain-locked 32-bit DJB2 hex verification works and how buyers activate their lifetime license key inside Blogger.",
+        title: "Commercial License & Terms",
+        lead: "Official licensing terms, lifetime update coverage, and usage rights for iForum Core.",
         prev: { id: "firebase", title: "Firebase & Realtime DB" },
         next: { id: "typography", title: "Typography & Code Sandbox" },
         html: `
           <div class="doc-section">
-            <h2>How the Domain-Locked License System Operates</h2>
-            <p>iForum includes a built-in anti-theft verification engine based on a hardened 32-bit <strong>DJB2 Hashing Algorithm</strong>. Each license key is bound to your blog's hostname and entered directly inside Blogger's Theme Customizer.</p>
-
-            <h2>Activation Steps for Buyers</h2>
+            <h2>Commercial License Overview</h2>
+            <p>iForum is commercial theme software crafted by <strong>Ayeng Coding</strong>. Every verified purchase on Gumroad or AyengStore includes lifetime updates and priority developer support.</p>
             <ul class="doc-steps">
               <li class="doc-step-item">
-                <span class="doc-step-num">1</span>
-                <div class="doc-step-text"><strong>Generate Your License Key via Telegram Bot or Account Hub:</strong> Open the Telegram bot <a href="https://t.me/abefilmbot" target="_blank" style="color:var(--brand);font-weight:600;">@abefilmbot</a> and type <code>/keygen yourdomain.com</code> (e.g., <code>/keygen iforumofficial.blogspot.com</code>), or retrieve your key from your <strong>AyengStore Account Hub</strong>.</div>
+                <span class="doc-step-num">✓</span>
+                <div class="doc-step-text"><strong>Lifetime Updates Included:</strong> Access all future v2.x releases and new community modules at no extra cost.</div>
               </li>
               <li class="doc-step-item">
-                <span class="doc-step-num">2</span>
-                <div class="doc-step-text"><strong>Enter Key in Blogger Theme Setup:</strong> In Blogger Dashboard, go to <strong>Theme → Customize → Advanced → Theme Setup</strong>, paste your generated license key, and click <strong>Save</strong>. <em>(Note: Every time you change your domain, you can generate a new key at any time).</em></div>
+                <span class="doc-step-num">✓</span>
+                <div class="doc-step-text"><strong>Priority Support:</strong> Direct assistance for buyers via our official Telegram support channel (<a href="https://t.me/ayengcoding" target="_blank" style="color:var(--brand);font-weight:600;">@ayengcoding</a>).</div>
+              </li>
+              <li class="doc-step-item">
+                <span class="doc-step-num">✓</span>
+                <div class="doc-step-text"><strong>Prohibited Use:</strong> Reselling, redistributing, or sharing the theme XML file publicly is strictly prohibited.</div>
               </li>
             </ul>
-
-            <div class="doc-code-wrap">
-              <div class="doc-code-bar">
-                <span>JavaScript — DJB2 32-Bit Hex Verification Reference</span>
-                <button class="doc-copy-btn" onclick="copyCodeBlock(this)">Copy</button>
-              </div>
-              <pre><code>var str = domain.toLowerCase().replace(/^https?:\/\//, '').replace(/\/$/, '') + "ABEFILM";
-var hash = 0;
-for (var i = 0; i < str.length; i++) {
-  hash = ((hash << 5) - hash) + str.charCodeAt(i);
-  hash |= 0;
-}
-var hex = Math.abs(hash).toString(16).toUpperCase().padStart(6, '0').substring(0, 6);</code></pre>
-            </div>
           </div>
         `
       },
@@ -1359,7 +1347,7 @@ var hex = Math.abs(hash).toString(16).toUpperCase().padStart(6, '0').substring(0
         eyebrow: "Ecosystem & formatting",
         title: "Typography & In-Post Developer Sandbox",
         lead: "Complete syntax reference for iForum's Live HTML/CSS/JS Code Playground, semantic alerts, heart-locked downloads, and accordions.",
-        prev: { id: "license", title: "License & Terms (DJB2)" },
+        prev: { id: "license", title: "License & Terms" },
         next: { id: "comments", title: "Comments & Nested Replies" },
         html: `
           <div class="doc-section">
@@ -2020,7 +2008,7 @@ var hex = Math.abs(hash).toString(16).toUpperCase().padStart(6, '0').substring(0
               </li>
               <li class="doc-step-item">
                 <span class="doc-step-num">✓</span>
-                <div class="doc-step-text"><strong>Community Gamification &amp; DJB2 Protection:</strong> Reputation points, 6 rank badges, and domain-locked licensing.</div>
+                <div class="doc-step-text"><strong>Community Gamification &amp; Advance Features:</strong> Reputation points, 6 rank badges, PWA app support, and heart-locked downloads.</div>
               </li>
             </ul>
           </div>
