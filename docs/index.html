@@ -49,6 +49,47 @@
       --brand-glow: rgba(244, 63, 94, 0.09);
     }
 
+
+    :root {
+      color-scheme: light;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+    }
+
+    /* Custom Sleek Scrollbars (Darkened in Dark Mode) */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+    }
+    [data-theme="dark"] * {
+      scrollbar-color: #1f2937 #0b0f17;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    [data-theme="dark"] ::-webkit-scrollbar-track {
+      background: #0b0f17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.45);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.7);
+    }
+    [data-theme="dark"] ::-webkit-scrollbar-thumb {
+      background: #1f2937;
+      border-radius: 999px;
+    }
+    [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
