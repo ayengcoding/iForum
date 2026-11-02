@@ -976,6 +976,7 @@
         <ul class="sidebar-nav-list">
           <li><button type="button" class="sidebar-nav-btn active" data-doc="intro" onclick="loadDoc('intro')">Introduction to iForum Core</button></li>
           <li><button type="button" class="sidebar-nav-btn" data-doc="install" onclick="loadDoc('install')">Quickstart &amp; Installation</button></li>
+          <li><button type="button" class="sidebar-nav-btn" data-doc="demo" onclick="loadDoc('demo')">Import Demo Posts (feed.atom)</button></li>
           <li><button type="button" class="sidebar-nav-btn" data-doc="pages" onclick="loadDoc('pages')">Essential Pages Setup</button></li>
         </ul>
       </div>
@@ -1111,7 +1112,7 @@
         title: "Quickstart & Installation",
         lead: "Step-by-step instructions to install the iForum Premium Blogger XML template and configure mobile & widget layout zones.",
         prev: { id: "intro", title: "Introduction to iForum Core" },
-        next: { id: "firebase", title: "Firebase & Realtime DB" },
+        next: { id: "demo", title: "Import Demo Posts (feed.atom)" },
         html: `
           <div class="doc-section">
             <div class="doc-callout">
@@ -1166,6 +1167,45 @@
                 </tbody>
               </table>
             </div>
+          </div>
+        `
+      },
+
+      demo: {
+        eyebrow: "Get started",
+        title: "Import Demo Posts (feed.atom)",
+        lead: "How to import the included sample threads and official Typography showcase from the Post Code Demo folder.",
+        prev: { id: "install", title: "Quickstart & Installation" },
+        next: { id: "pages", title: "Essential Pages Setup" },
+        html: `
+          <div class="doc-section">
+            <div class="doc-callout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <div class="doc-callout-body">
+                <strong>Folder Location:</strong> Open <code>Product - iForum Premium / Post Code Demo / feed.atom</code> (176 KB) in your downloaded theme archive.
+              </div>
+            </div>
+
+            <h2>Step-by-Step Demo Content Import</h2>
+            <p>Importing <code>feed.atom</code> populates your forum with sample discussion threads and the interactive Typography &amp; Sandbox guide:</p>
+            <ul class="doc-steps">
+              <li class="doc-step-item">
+                <span class="doc-step-num">1</span>
+                <div class="doc-step-text">Open your <strong>Blogger Dashboard</strong> and click <strong>Settings</strong> in the left sidebar.</div>
+              </li>
+              <li class="doc-step-item">
+                <span class="doc-step-num">2</span>
+                <div class="doc-step-text">Scroll down toward the bottom until you find the <strong>Manage Blog</strong> section.</div>
+              </li>
+              <li class="doc-step-item">
+                <span class="doc-step-num">3</span>
+                <div class="doc-step-text">Click <strong>Import Content</strong> and select the file named <strong><code>feed.atom</code></strong> from the <code>Post Code Demo</code> folder.</div>
+              </li>
+              <li class="doc-step-item">
+                <span class="doc-step-num">4</span>
+                <div class="doc-step-text">Wait a few seconds for Blogger to finish importing the posts, then refresh your live website!</div>
+              </li>
+            </ul>
           </div>
         `
       },
@@ -1228,7 +1268,23 @@
             </div>
 
             <h2>3. Enable Google Sign-In &amp; Authorized Domains</h2>
-            <p>Go to <strong>Build → Authentication → Sign-in method</strong>, enable <strong>Google</strong>, and then add both your <code>yourblog.blogspot.com</code> and custom domain under <strong>Authentication → Settings → Authorized domains</strong>.</p>
+            <p>Go to <strong>Build → Authentication → Sign-in method</strong>, enable <strong>Google</strong>, select your support email, and click <strong>Save</strong>. Then go to <strong>Authentication → Settings → Authorized domains → Add domain</strong> and enter your blog's domain (e.g. <code>yourblog.blogspot.com</code> or <code>www.yourcustomdomain.com</code>).</p>
+
+            <h2>4. Update Your Theme.xml File (Above &lt;/body&gt;)</h2>
+            <ul class="doc-steps">
+              <li class="doc-step-item">
+                <span class="doc-step-num">1</span>
+                <div class="doc-step-text">In Blogger Dashboard, go to <strong>Theme → Customize (▾) → Edit HTML</strong> and scroll to the very bottom just above the <code>&lt;/body&gt;</code> tag.</div>
+              </li>
+              <li class="doc-step-item">
+                <span class="doc-step-num">2</span>
+                <div class="doc-step-text">Locate <code>const firebaseConfig = { ... }</code> and replace the <code>YOUR_...</code> placeholders with your keys from Step 1.</div>
+              </li>
+              <li class="doc-step-item">
+                <span class="doc-step-num">3</span>
+                <div class="doc-step-text"><strong>Important — Manual <code>databaseURL</code> Check:</strong> If your Firebase snippet did not include <code>databaseURL</code>, open <strong>Realtime Database → Data tab</strong> in Firebase Console, copy the URL next to the link icon (e.g. <code>https://your-project-default-rtdb.asia-southeast1.firebasedatabase.app</code>), and paste it as your <code>databaseURL</code> value. Click <strong>Save</strong>!</div>
+              </li>
+            </ul>
           </div>
         `
       },
@@ -1248,11 +1304,11 @@
             <ul class="doc-steps">
               <li class="doc-step-item">
                 <span class="doc-step-num">1</span>
-                <div class="doc-step-text"><strong>Generate or Copy Your Key:</strong> Open the included <code>KeyGenerator.html</code> tool (or your AyengStore Account Hub), enter your domain without <code>https://</code> (e.g., <code>iforumofficial.blogspot.com</code>), and copy the 6-character uppercase Hex code.</div>
+                <div class="doc-step-text"><strong>Generate Your License Key via Telegram Bot or Account Hub:</strong> Open the Telegram bot <a href="https://t.me/abefilmbot" target="_blank" style="color:var(--brand);font-weight:600;">@abefilmbot</a> and type <code>/keygen yourdomain.com</code> (e.g., <code>/keygen iforumofficial.blogspot.com</code>), or retrieve your key from your <strong>AyengStore Account Hub</strong>.</div>
               </li>
               <li class="doc-step-item">
                 <span class="doc-step-num">2</span>
-                <div class="doc-step-text"><strong>Activate in Blogger:</strong> Navigate to <strong>Blogger Dashboard → Theme → Customize → Advanced → Theme Setup</strong>, paste your key with the <code>#</code> prefix (e.g., <code>#8B4F2A</code>), and click <strong>Save</strong>.</div>
+                <div class="doc-step-text"><strong>Enter Key in Blogger Theme Setup:</strong> In Blogger Dashboard, go to <strong>Theme → Customize → Advanced → Theme Setup</strong>, paste your generated license key, and click <strong>Save</strong>. <em>(Note: Every time you change your domain, you can generate a new key at any time).</em></div>
               </li>
             </ul>
 
@@ -1395,13 +1451,504 @@ var hex = Math.abs(hash).toString(16).toUpperCase().padStart(6, '0').substring(0
             <ul class="doc-steps">
               <li class="doc-step-item">
                 <span class="doc-step-num">1</span>
-                <div class="doc-step-text">In <strong>Blogger Dashboard → Pages → + New Page</strong>, switch the editor to <strong>HTML View (<code>&lt;/&gt;</code>)</strong>.</div>
+                <div class="doc-step-text">In <strong>Blogger Dashboard → Pages → + New Page</strong>, set the page title and switch the top-left editor toggle from Compose view to <strong>HTML View (<code>&lt;/&gt;</code>)</strong>.</div>
               </li>
               <li class="doc-step-item">
                 <span class="doc-step-num">2</span>
-                <div class="doc-step-text">Paste the HTML from <code>Community Guidelines.txt</code>, <code>Help Center.txt</code>, <code>Privacy Policy.txt</code>, or <code>Terms of Service.txt</code> and click <strong>Publish</strong>.</div>
+                <div class="doc-step-text">Copy the HTML from the <code>Pages/*.txt</code> files in your package (or click <strong>Copy</strong> on the 4 templates below), paste into the editor, and click <strong>Publish</strong>.</div>
               </li>
             </ul>
+
+            <h2>1. Community Guidelines (<code>Community Guidelines.txt</code>)</h2>
+            <div class="doc-code-wrap">
+              <div class="doc-code-bar"><span>HTML — Community Guidelines</span><button class="doc-copy-btn" onclick="copyCodeBlock(this)">Copy</button></div>
+              <pre style="max-height:240px;"><code>&lt;div class=&quot;full-post-body&quot;&gt;
+
+  &lt;div class=&quot;alert warning&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-alert-02&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Strict Compliance:&lt;/b&gt; By participating in the iForum Community, you agree to follow these rules. Non-compliance leads to immediate content removal or account restriction.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p&gt;Our platform is dedicated to high-quality creative exchange. To ensure a professional and organized environment, all members must adhere to the following standards of conduct and presentation.&lt;/p&gt;
+
+  &lt;!-- THE EXPANDED CORE RULES --&gt;
+  &lt;h3&gt;Code of Conduct &amp; Posting Rules&lt;/h3&gt;
+  &lt;div class=&quot;step-container&quot;&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;1&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Respectful Interaction:&lt;/b&gt; Professional courtesy is mandatory. We have a zero-tolerance policy for hate speech, toxic behavior, personal attacks, or religious/political provocations.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;2&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;English Only Policy:&lt;/b&gt; To ensure that the community can moderate and assist all users effectively, &lt;b&gt;English is the only permitted language&lt;/b&gt; for thread titles, post content, and comments.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;3&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Authorized File Sharing &amp; Credits:&lt;/b&gt; Unauthorized distribution of premium content is forbidden. If you are sharing a file that belongs to another owner, you &lt;b&gt;must&lt;/b&gt; provide full credits, including their original link, website, or social bio.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;4&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Accurate Labeling:&lt;/b&gt; Organization is key. When creating a thread, you must select the **Correct Label** (e.g., Theme, Support, Tutorials). Mislabeling threads makes them difficult to find and may lead to deletion.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;5&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Typography &amp; Readability:&lt;/b&gt; Use the built-in typography tools to make your posts readable. Clear formatting helps us help you. View the &lt;a href=&quot;https://abefilmforum.blogspot.com/2026/02/typography.html&quot; target=&quot;_blank&quot; style=&quot;color:var(--accent); font-weight:800;&quot;&gt;Typography Standards&lt;/a&gt; for more info.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- THE VISUAL GRID --&gt;
+  &lt;h3&gt;Community Standards&lt;/h3&gt;
+  &lt;div class=&quot;feature-grid&quot;&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-tag-01&quot; style=&quot;font-size:32px; color:var(--orange);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Proper Labeling&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Tagging your posts correctly ensures the right experts see your thread and the search filters work perfectly.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-type-cursor&quot; style=&quot;font-size:32px; color:var(--purple);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Clean Typography&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Follow our professional standards. View the &lt;a href=&quot;https://abefilmforum.blogspot.com/2026/02/typography.html&quot; target=&quot;_blank&quot; style=&quot;color:var(--accent); text-decoration:underline;&quot;&gt;Typography Guide&lt;/a&gt; to format your posts correctly.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-translate&quot; style=&quot;font-size:32px; color:var(--accent);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;English Policy&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Using English helps our global community and moderators understand your needs instantly.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- UPDATED CONSEQUENCES TABLE --&gt;
+  &lt;h3&gt;Violations &amp; Consequences&lt;/h3&gt;
+  &lt;div class=&quot;spec-card&quot;&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Violation Type&lt;/th&gt;&lt;th&gt;Action Taken&lt;/th&gt;&lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Incorrect Labeling&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Thread Moved or Deleted&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Poor Formatting/Typography&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Post Edited or Warning Issued&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Posting in Non-English&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Comment Edited or Hidden&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Missing Credits/Attribution&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Post Hidden until Credits are added&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Malicious Content / Virus&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Immediate Permanent Ban &amp; IP Block&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;!-- FINAL NOTICE --&gt;
+  &lt;div class=&quot;alert info&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-user-group&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;&lt;b&gt;Staff Authority:&lt;/b&gt; Moderators reserve the right to edit or remove content that violates these rules to maintain the forum&#x27;s professional quality.&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- FIXED ALERT BOX --&gt;
+  &lt;div class=&quot;alert danger&quot;&gt;
+  &lt;i class=&quot;hgi hgi-stroke hgi-flag-02&quot;&gt;&lt;/i&gt;
+  &lt;div style=&quot;flex:1;&quot;&gt;
+      &lt;b&gt;Reporting Violations:&lt;/b&gt; If you find a post with missing credits or non-English content, please notify the staff by &lt;b&gt;starting a thread in the Support category&lt;/b&gt; or via our official &lt;b&gt;Telegram Group&lt;/b&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h2>2. Help Center &amp; FAQ (<code>Help Center.txt</code>)</h2>
+            <div class="doc-code-wrap">
+              <div class="doc-code-bar"><span>HTML — Help Center</span><button class="doc-copy-btn" onclick="copyCodeBlock(this)">Copy</button></div>
+              <pre style="max-height:240px;"><code>&lt;div class=&quot;full-post-body&quot;&gt;
+  &lt;!-- HEADER SECTION --&gt;
+ 
+  
+  &lt;div class=&quot;alert info&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-information-circle&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;New here?&lt;/b&gt; This guide covers everything from account setup to finding the right help for your project.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p&gt;Our community is designed to provide expert assistance. Below you will find the tools and steps needed to get your questions answered quickly and accurately.&lt;/p&gt;
+
+  &lt;!-- QUICK START STEPS --&gt;
+  &lt;h3&gt;Getting Started in 3 Steps&lt;/h3&gt;
+  &lt;div class=&quot;step-container&quot;&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;1&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Create an Account:&lt;/b&gt; Click the user icon in the top right. Use a valid email so you can verify your account and unlock the ability to post questions.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;2&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Search First:&lt;/b&gt; Use the search bar at the top to see if your question has already been answered. Many technical issues have instant solutions in existing threads.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;3&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Post in Support:&lt;/b&gt; If you still need help, click &lt;b&gt;&quot;New Post&quot;&lt;/b&gt; and select the &lt;b&gt;Support&lt;/b&gt; label. Be as detailed as possible to get a faster response.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- REVISED FEATURE HIGHLIGHTS: SUPPORT FOCUS --&gt;
+  &lt;h3&gt;Support Resources&lt;/h3&gt;
+  &lt;div class=&quot;feature-grid&quot;&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-customer-service-02&quot; style=&quot;font-size:32px; color:var(--accent);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Priority Support&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Threads labeled with &quot;Support&quot; are monitored by our expert community members and staff.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-book-open-01&quot; style=&quot;font-size:32px; color:var(--green);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Detailed Guides&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Access our &lt;a href=&quot;/p/community-guidelines.html&quot; style=&quot;color:inherit; text-decoration:underline;&quot;&gt;Rules&lt;/a&gt; and &lt;a href=&quot;https://abefilmforum.blogspot.com/2026/02/typography.html&quot; style=&quot;color:inherit; text-decoration:underline;&quot;&gt;Typography&lt;/a&gt; guides to format your help requests professionally.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-tick-01&quot; style=&quot;font-size:32px; color:var(--cyan);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Solved Status&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Once your issue is fixed, the &quot;Best Answer&quot; feature highlights the solution for future users.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+ 
+  &lt;h3&gt;Frequently Asked Questions&lt;/h3&gt;
+  
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;How does the &quot;Locker&quot; system work? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;To view exclusive download links, you must be &lt;b&gt;Logged In&lt;/b&gt; and you must &lt;b&gt;Heart (Like)&lt;/b&gt; the post. Once you click the heart icon, the link card will instantly reveal its download button.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;How do I change my Profile Photo? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;Hover over your username in the top bar to see your Profile Card. Click the &lt;b&gt;&quot;Photo&quot;&lt;/b&gt; button (Camera icon) to upload a new avatar from your device. This change is instant across the forum.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;How do I get a &quot;Best Answer&quot; mark? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;If you provide a solution in a &lt;b&gt;Support&lt;/b&gt; thread, the original poster can click the &quot;Best Answer&quot; button on your comment. This highlights your answer in green and awards you &lt;b&gt;+50 reputation points&lt;/b&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;What should I do if a download link is broken? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;If you encounter a broken link, please &lt;b&gt;Reply&lt;/b&gt; to that thread and mention the author. If the author is inactive, start a thread in the &lt;b&gt;Support&lt;/b&gt; category with a link to the original post so a moderator can assist.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;How do I earn the &quot;Verified&quot; badge? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;You must link your official Blogger profile to your forum account. Open your Profile Card, click the &lt;b&gt;Link Blogger&lt;/b&gt; status, and follow the instructions to sync your display name. Once synced, the blue checkmark badge will appear.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;How do I report a rule violation? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;If you see spam, harassment, or missing credits, please notify the staff immediately. You can do this by starting a thread in the &lt;b&gt;Support&lt;/b&gt; category or joining our &lt;b&gt;Official Telegram Group&lt;/b&gt; for a faster response.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;What are Reputation Points (REP)? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;Reputation is a measure of your contribution to the community. You earn points when people heart your posts (+5) or mark your comment as the best answer (+50). Higher reputation unlocks new medals like &lt;b&gt;Rising Star&lt;/b&gt;, &lt;b&gt;Master&lt;/b&gt;, and &lt;b&gt;Legend&lt;/b&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;Why was my post deleted? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;Posts are usually removed if they violate our &lt;a href=&quot;/p/community-guidelines.html&quot; style=&quot;color:var(--accent); font-weight:800;&quot;&gt;Guidelines&lt;/a&gt;. Common reasons include: using languages other than English, missing credits for shared files, or posting in the wrong category.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;How do I get a &quot;Best Answer&quot; mark? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;If you help someone in a &lt;b&gt;Support&lt;/b&gt; thread, the thread creator can mark your comment as the &quot;Best Answer.&quot; This awards you extra reputation points and a special badge.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;post-accordion&quot;&gt;
+    &lt;div class=&quot;acc-header&quot;&gt;Why was my post deleted? &lt;i class=&quot;hgi hgi-stroke hgi-arrow-down-01&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;div class=&quot;acc-body&quot;&gt;
+      &lt;p&gt;Posts are usually removed if they violate our &lt;a href=&quot;/p/community-guidelines.html&quot;&gt;Guidelines&lt;/a&gt;, use non-English language, or contain missing credits for shared files.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- TECHNICAL LIMITS TABLE --&gt;
+  &lt;h3&gt;System Limits &amp; Specs&lt;/h3&gt;
+  &lt;div class=&quot;spec-card&quot;&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Feature&lt;/th&gt;&lt;th&gt;Limit / Detail&lt;/th&gt;&lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;File Uploads&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Max 5MB per file&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Allowed Formats&lt;/b&gt;&lt;/td&gt;&lt;td&gt;ZIP, RAR, XML, JSON, TXT, PDF&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Reputation Per Heart&lt;/b&gt;&lt;/td&gt;&lt;td&gt;+5 Points&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Reputation Per Best Answer&lt;/b&gt;&lt;/td&gt;&lt;td&gt;+50 Points&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Language&lt;/b&gt;&lt;/td&gt;&lt;td&gt;English Only&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;!-- FINAL WARNING / NOTICE --&gt;
+  &lt;div class=&quot;alert danger&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-alert-01&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Important:&lt;/b&gt; Posting nulled, pirated, or malicious content is strictly forbidden and will result in an immediate account ban.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;alert success&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-checkmark-circle-02&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Need more help?&lt;/b&gt; If you didn&#x27;t find your answer here, start a new thread in the &lt;a href=&quot;/search/label/Support&quot; style=&quot;color:inherit; text-decoration:underline;&quot;&gt;Support Category&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h2>3. Privacy Policy (<code>Privacy Policy.txt</code>)</h2>
+            <div class="doc-code-wrap">
+              <div class="doc-code-bar"><span>HTML — Privacy Policy</span><button class="doc-copy-btn" onclick="copyCodeBlock(this)">Copy</button></div>
+              <pre style="max-height:240px;"><code>&lt;div class=&quot;full-post-body&quot;&gt;
+  
+  &lt;div class=&quot;alert info&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-security-check&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Privacy Commitment:&lt;/b&gt; Your trust is our priority. This document outlines exactly what data we collect and how we ensure its security while you use the iForum Community.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p&gt;To provide a functional and interactive community, we collect specific information during your registration and participation. We adhere to industry standards to protect your digital identity.&lt;/p&gt;
+
+  &lt;!-- DATA COLLECTION TABLE --&gt;
+  &lt;h3&gt;1. Information We Collect&lt;/h3&gt;
+  &lt;p&gt;The following table summarizes the data stored in our secure database:&lt;/p&gt;
+  
+  &lt;div class=&quot;spec-card&quot;&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Data Category&lt;/th&gt;&lt;th&gt;Specific Detail &amp;amp; Purpose&lt;/th&gt;&lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Account Credentials&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Email address and password (encrypted) for secure login.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;User Profile&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Username, display name, and bio displayed on your profile.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Digital Identity&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Avatars linked via your Blogger profile or custom upload.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Activity Data&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Records of your posts, comments, hearts, and reputation points.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Technical Logs&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Browser type and IP address (used only for anti-spam/security).&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;!-- PRIVACY PRINCIPLES GRID --&gt;
+  &lt;h3&gt;2. Our Privacy Principles&lt;/h3&gt;
+  &lt;div class=&quot;feature-grid&quot;&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-lock-key&quot; style=&quot;font-size:32px; color:var(--accent);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;End-to-End Auth&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Passwords are hashed and managed by Supabase, meaning even staff cannot see your actual password.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-share-knowledge&quot; style=&quot;font-size:32px; color:var(--green);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;No Third-Party Sales&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;We never sell or trade your email address or personal data to marketing agencies or outside firms.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-eye&quot; style=&quot;font-size:32px; color:var(--cyan);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Transparency&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;We only collect data that is essential for the forum&#x27;s features (Comments, Badges, etc.) to function.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- HOW DATA IS USED STEPS --&gt;
+  &lt;h3&gt;3. How We Use Your Information&lt;/h3&gt;
+  &lt;div class=&quot;step-container&quot;&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;1&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Authentication:&lt;/b&gt; To identify you uniquely so you can create threads and participate in discussions safely.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;2&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Reputation Tracking:&lt;/b&gt; To calculate your achievements, award badges, and manage your level within the community.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;3&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Personalization:&lt;/b&gt; We use &lt;b&gt;Local Storage&lt;/b&gt; to save your UI preferences, such as your choice between Dark and Light mode.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;4&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Security &amp;amp; Moderation:&lt;/b&gt; To detect spam bots and enforce our community guidelines through IP monitoring when necessary.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- THIRD PARTY SERVICES --&gt;
+  &lt;h3&gt;4. Integrated Third-Party Services&lt;/h3&gt;
+  &lt;p&gt;The iForum Community utilizes global infrastructure to provide a fast and secure experience. These partners have their own privacy policies:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Supabase:&lt;/b&gt; Powers our database, user authentication, and profile storage.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Blogger (Google):&lt;/b&gt; Hosts our primary content, images, and core page structure.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Klipy:&lt;/b&gt; Provides the API for GIF and Sticker searching within the comment system.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Cloudflare:&lt;/b&gt; Handles secure file uploads and protects the forum from DDoS attacks.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3&gt;5. Data Control &amp;amp; User Rights&lt;/h3&gt;
+  &lt;p&gt;You have full control over your digital footprint on our forum:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Edit Profile:&lt;/b&gt; You can update your display name, bio, and avatar at any time via your profile card.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Content Deletion:&lt;/b&gt; You can request the removal of your threads or comments if they contain sensitive info.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Account Removal:&lt;/b&gt; If you wish to permanently delete your forum data, please contact the Administration.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div class=&quot;alert warning&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-alert-02&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Policy Updates:&lt;/b&gt; We may update this policy periodically as we add new features. Continued use of the forum constitutes acceptance of these terms.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;alert success&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-mail-02&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;&lt;b&gt;Questions?&lt;/b&gt; If you have any concerns regarding your privacy, please start a thread in the &lt;a href=&quot;/search/label/Support&quot; style=&quot;color:inherit; text-decoration:underline;&quot;&gt;Support Category&lt;/a&gt;.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h2>4. Terms of Service (<code>Terms of Service.txt</code>)</h2>
+            <div class="doc-code-wrap">
+              <div class="doc-code-bar"><span>HTML — Terms of Service</span><button class="doc-copy-btn" onclick="copyCodeBlock(this)">Copy</button></div>
+              <pre style="max-height:240px;"><code>&lt;div class=&quot;full-post-body&quot;&gt;
+  &lt;h2 style=&quot;margin-top:0 !important;&quot;&gt;Terms of Service&lt;/h2&gt;
+  
+  &lt;div class=&quot;alert warning&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-alert-02&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Legal Agreement:&lt;/b&gt; By creating an account or accessing the iForum Community, you acknowledge that you have read, understood, and agree to be bound by the terms outlined below.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;p&gt;Welcome to iForum. These Terms of Service (&quot;Terms&quot;) govern your access to and use of our forum platform, including any content, functionality, and services offered on or through the site.&lt;/p&gt;
+
+  &lt;!-- SUMMARY TABLE --&gt;
+  &lt;h3&gt;1. Agreement Summary&lt;/h3&gt;
+  &lt;div class=&quot;spec-card&quot;&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Provision&lt;/th&gt;&lt;th&gt;What it means for you&lt;/th&gt;&lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Eligibility&lt;/b&gt;&lt;/td&gt;&lt;td&gt;You must be at least 13 years old to register.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Content License&lt;/b&gt;&lt;/td&gt;&lt;td&gt;You own your posts, but give us permission to host them.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Behavior&lt;/b&gt;&lt;/td&gt;&lt;td&gt;You must follow our English-only and professional conduct rules.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;File Sharing&lt;/b&gt;&lt;/td&gt;&lt;td&gt;You must provide credits/links for files you don&#x27;t own.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;b&gt;Liability&lt;/b&gt;&lt;/td&gt;&lt;td&gt;We are not responsible for damage from community-shared files.&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;!-- CORE TERMS GRID --&gt;
+  &lt;h3&gt;2. Core Pillars of Use&lt;/h3&gt;
+  &lt;div class=&quot;feature-grid&quot;&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-translate&quot; style=&quot;font-size:32px; color:var(--accent);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Universal Access&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;All public interactions must be in English to ensure effective moderation and community support.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-customer-service&quot; style=&quot;font-size:32px; color:var(--green);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Safety First&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;We do not allow the sharing of malicious code, viruses, or unauthorized &quot;cracked&quot; software.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feature-item&quot;&gt;
+      &lt;div class=&quot;feature-icon&quot; style=&quot;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,0.03)!important;border:1.5px solid var(--border)!important;&quot;&gt;&lt;i class=&quot;hgi hgi-stroke hgi-copyright&quot; style=&quot;font-size:32px; color:var(--cyan);&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;b class=&quot;feature-title&quot;&gt;Credit Policy&lt;/b&gt;
+      &lt;p class=&quot;feature-desc&quot;&gt;Respecting intellectual property is mandatory. Credit the original owners for any shared assets.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- USER RESPONSIBILITIES STEPS --&gt;
+  &lt;h3&gt;3. User Responsibilities &amp; Content&lt;/h3&gt;
+  &lt;div class=&quot;step-container&quot;&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;1&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Account Security:&lt;/b&gt; You are responsible for maintaining the confidentiality of your Supabase login credentials. You are liable for all activity that occurs under your account.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;2&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Content Ownership:&lt;/b&gt; You retain all rights to the content you post. However, by posting, you grant iForum a worldwide, non-exclusive, royalty-free license to use, display, and distribute said content.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-item&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;&lt;div class=&quot;step-number-inner&quot;&gt;3&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;step-content&quot;&gt;
+        &lt;b&gt;Prohibited Conduct:&lt;/b&gt; You agree not to use the forum for harassment, spam, mislabeling threads, or distributing files without proper attribution and credits.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- TECHNICAL &amp; SAFETY --&gt;
+  &lt;h3&gt;4. File Safety &amp; External Links&lt;/h3&gt;
+  &lt;p&gt;iForum provides a platform for users to share resources. However:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;As-Is Basis:&lt;/b&gt; All files and links are provided &quot;as-is&quot; without any warranties of any kind.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Download Risk:&lt;/b&gt; You download and use community-shared files at your own risk. iForum is not liable for data loss, hardware damage, or security breaches resulting from downloads.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Locker System:&lt;/b&gt; Our &quot;Heart to Unlock&quot; system is a community engagement tool and does not guarantee the safety or functionality of the locked content.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3&gt;5. Termination of Service&lt;/h3&gt;
+  &lt;p&gt;We reserve the right, at our sole discretion, to terminate or suspend your account and access to the forum for any reason, including but not limited to:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Violation of the &lt;b&gt;Community Guidelines&lt;/b&gt;.&lt;/li&gt;
+    &lt;li&gt;Sharing malicious content or unauthorized premium files.&lt;/li&gt;
+    &lt;li&gt;Repeatedly posting in languages other than English.&lt;/li&gt;
+    &lt;li&gt;Actions that harm the community&#x27;s integrity or reputation.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;!-- DISCLAIMER ALERT --&gt;
+  &lt;div class=&quot;alert danger&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-property-strict&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;
+        &lt;b&gt;Limitation of Liability:&lt;/b&gt; Under no circumstances shall iForum or its staff be liable for any direct, indirect, or incidental damages arising from your use of the forum.
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;alert info&quot;&gt;
+    &lt;i class=&quot;hgi hgi-stroke hgi-calendar-02&quot;&gt;&lt;/i&gt; 
+    &lt;div style=&quot;flex:1;&quot;&gt;&lt;b&gt;Last Updated:&lt;/b&gt; March 02, 2026. We reserve the right to modify these terms at any time without prior notice.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
           </div>
         `
       },

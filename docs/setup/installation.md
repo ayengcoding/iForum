@@ -1,60 +1,47 @@
-# Installation & Blogger Theme Setup
+# Installation, Demo Content (`feed.atom`) & Blogger Setup
 
-This guide walks you through installing the **iForum Premium** Blogger template and ensuring all native layout components are ready.
-
----
-
-## 📋 Requirements
-- A Google Account with access to [Blogger Dashboard](https://www.blogger.com).
-- An active or new Blogger blog.
-- The `iForum Premium.xml` file (from your purchased product package).
+This guide covers every instruction from the `Theme` and `Post Code Demo` folders of your **Product - iForum Premium** package.
 
 ---
 
-## 🚀 Step 1: Install the Theme File
+## 🚀 Step 1: Install the Custom Theme in Blogger (`Read Me First.txt`)
 
-You can install the theme using either **Restore** (recommended for beginners) or **Edit HTML** (recommended if preserving custom tags).
+### Option 1: Upload the XML File (Recommended)
+1. Go to [https://www.blogger.com](https://www.blogger.com) and sign in.
+2. Select your blog from the Blogger dashboard.
+3. In the left sidebar, click **Theme**.
+4. Click the arrow (`▾`) next to the **Customize** button and select **Restore**.
+5. Click **Upload** and select **`iForum Premium.xml`** from the `Theme` folder.
+6. Wait for the upload to complete; the theme will be applied automatically.
 
-### Method A: Restore (Clean Install)
-1. Log into your [Blogger Dashboard](https://www.blogger.com).
-2. Select your blog from the top-left dropdown.
-3. In the left navigation menu, click **Theme**.
-4. Click the three vertical dots (or the downward chevron) next to the orange **Customize** button.
-5. Select **Restore**.
-6. Click **Upload** and browse to your downloaded package folder:
-   - Select `iForum Premium.xml`
-7. Wait a few seconds until Blogger shows the confirmation toast: `Theme restored`.
-
-### Method B: Edit HTML (Manual Paste)
-1. Navigate to **Theme → Edit HTML**.
-2. Press `Ctrl + A` and `Delete` to clear any default Blogger code.
-3. Open `iForum Premium.xml` in Notepad or VS Code, select all code, and copy it.
-4. Paste it into the Blogger editor and click the **Save** floppy icon in the top right.
+### Option 2: Manually Paste the Code
+1. Go to **Theme → arrow (`▾`) → Edit HTML**.
+2. Press `Ctrl + A` to select all existing code, then press `Delete`.
+3. Open **`iForum Premium.xml`** in Notepad or VS Code, copy all code (`Ctrl + A`, `Ctrl + C`), and paste it into the Blogger HTML editor (`Ctrl + V`).
+4. Click the **Save** icon (`💾`) at the top right.
 
 ---
 
-## ⚙️ Step 2: Configure Mobile View
-To ensure your forum displays in full responsive modern mode rather than Blogger's legacy mobile skin:
-1. In the **Theme** tab, click the arrow next to **Customize**.
-2. Select **Mobile settings**.
-3. Choose **Desktop** (or choose *Custom* and ensure the mobile theme does not override the primary layout).
-4. Click **Save**.
+## 📦 Step 2: Import Sample / Demo Posts (`Post Code Demo / feed.atom`)
+
+Your package includes `Post Code Demo/feed.atom` containing pre-formatted sample discussions and the official Typography showcase post:
+
+1. In your **Blogger Dashboard**, click **Settings** in the left sidebar.
+2. Scroll down to the **Manage Blog** section.
+3. Click **Import Content**.
+4. Select **`feed.atom`** from the `Post Code Demo` folder.
+5. Wait a few seconds for the import to finish, then refresh your website.
 
 ---
 
-## 🎨 Step 3: Blogger Layout & Widgets Configuration
-Navigate to the **Layout** tab in Blogger. iForum is organized into standard widget zones:
-- **Header**: Logo, navigation links, and theme toggle.
-- **Top Bar / Announcements**: Notification pills or pinned banners.
-- **Main Forum Feed**: Blog Posts widget (Topics list).
-- **Sidebar Right**: 
-  - *Community Pulse Widget*: Realtime live counters.
-  - *Author Card / Profile*: Current user card.
-  - *Trending Labels*: Tag cloud and categories.
-  - *Telegram Community CTA*: Quick link button to your community channel.
-- **Footer**: Copyright, legal page links, and developer info.
+## 🔑 Step 3: Activate Your Domain License (`Read Me First.txt`)
 
----
-
-## ⏭️ Next Steps
-Proceed to the [Firebase Setup Guide](firebase-setup.md) to enable Google Logins, real-time post views, and heart reaction counters!
+1. Open your **AyengStore Account Hub** (using your Gumroad purchase email) OR open Telegram and message **[@abefilmbot](https://t.me/abefilmbot)** (or contact **[@ayengcoding](https://t.me/ayengcoding)**).
+2. In the Telegram bot, type:
+   ```text
+   /keygen yourdomain.com
+   ```
+   *(Example: `/keygen iforumofficial.blogspot.com`)*
+3. The bot will automatically generate your domain license key.
+4. In Blogger Dashboard, go to **Theme → Customize → Advanced → Theme Setup** and enter your license key, then click **Save**.
+   *(Note: Every time you change your domain, you will require a new license key, which you can generate at any time).*
