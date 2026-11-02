@@ -10,9 +10,13 @@
   <a href="https://prismjs.com"><img src="https://img.shields.io/badge/Prism.js-Code%20Highlighting-2B3A42.svg?style=for-the-badge&logo=javascript&logoColor=white" alt="Prism"></a>
   <a href="https://web.dev/progressive-web-apps/"><img src="https://img.shields.io/badge/PWA-Installable%20App-5A0FC8.svg?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA Ready"></a>
   <a href="#"><img src="https://img.shields.io/badge/License-Domain%20Locked-00DF82.svg?style=for-the-badge&logo=security&logoColor=white" alt="License"></a>
+  <a href="https://github.com/ayengcoding/iForum/releases/tag/v2.4.0"><img src="https://img.shields.io/badge/Release-v2.4.0-3B82F6.svg?style=for-the-badge&logo=github&logoColor=white" alt="v2.4.0"></a>
 </p>
 
 <p align="center">
+  <a href="https://iforumofficial.blogspot.com/">
+    <img src="https://img.shields.io/badge/🌐%20LIVE%20DEMO-IFORUMOFFICIAL.BLOGSPOT.COM-3b82f6?style=for-the-badge&logo=blogger&logoColor=white&labelColor=090d16" alt="Live Demo" height="38">
+  </a>
   <a href="docs/index.html">
     <img src="https://img.shields.io/badge/🚀%20INTERACTIVE%20DOCUMENTATION-EXPLORE%20GUIDES-00df82?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=090d16" alt="Interactive Docs" height="38">
   </a>
@@ -113,6 +117,19 @@ flowchart TD
 4. **Activate Theme License**:
    - Use the standalone Key Generator tool with your domain name.
    - Enter your 6-digit hex key in Blogger's theme customization panel.
+
+
+---
+
+## 📦 Release History & Changelog
+
+### `v2.4.0` — Latest Release
+- **Firebase Realtime Database**: Real-time cross-device sync for live post view counters, heart reactions, and active member stats.
+- **Firebase Google Authentication**: 1-Tap secure Google sign-in and member profile synchronization.
+- **In-Post Developer Sandbox**: Interactive live HTML, CSS, and JavaScript compiler with instant preview iframe and **Prism.js** syntax highlighting.
+- **Modern Two-Tier Nested Comments**: Rich formatting toolbar, emoji reactions, comment sorting, and verified **Best Answer** ribbons.
+- **Community Gamification Engine**: Reputation points, member rank badges (`Admin`, `Pro`, `Member`), and leaderboards.
+- **Domain-Locked Licensing (DJB2)**: 32-bit hex anti-theft activation configurable straight from Blogger's native Theme Setup UI.
 
 ---
 
