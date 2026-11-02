@@ -17,10 +17,10 @@
   <a href="https://iforumofficial.blogspot.com/">
     <img src="https://img.shields.io/badge/🌐%20LIVE%20DEMO-IFORUMOFFICIAL.BLOGSPOT.COM-3b82f6?style=for-the-badge&logo=blogger&logoColor=white&labelColor=090d16" alt="Live Demo" height="38">
   </a>
-  <a href="docs/index.html">
-    <img src="https://img.shields.io/badge/🚀%20INTERACTIVE%20DOCUMENTATION-EXPLORE%20GUIDES-00df82?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=090d16" alt="Interactive Docs" height="38">
+  <a href="https://ayengcoding.github.io/iForum/">
+    <img src="https://img.shields.io/badge/🚀%20DOCUMENTATION-AYENGCODING.GITHUB.IO%2FIFORUM-00df82?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=090d16" alt="Interactive Docs" height="38">
   </a>
-  <a href="docs/setup/firebase-setup.md">
+  <a href="https://ayengcoding.github.io/iForum/docs/index.html">
     <img src="https://img.shields.io/badge/🔥%20FIREBASE%20SETUP-QUICK%20INTEGRATION-FFA000?style=for-the-badge&logo=firebase&logoColor=white&labelColor=1e293b" alt="Firebase Setup" height="38">
   </a>
 </p>
@@ -33,7 +33,7 @@
 
 | Document | Audience | Highlights |
 |---|---|---|
-| [**Interactive Docs Portal (docs/index.html)**](docs/index.html) | Everyone | Live web-based documentation dashboard with search, interactive guides, and feature walkthroughs. |
+| [**Interactive Docs Portal (ayengcoding.github.io/iForum)**](https://ayengcoding.github.io/iForum/) | Everyone | Live web-based documentation dashboard with search, interactive guides, and feature walkthroughs. |
 | [**INSTALLATION.md**](docs/setup/installation.md) | Site Owners & Beginners | 4-step installation in Blogger (`Theme → Restore`), layout setup, and initial configuration. |
 | [**FIREBASE_SETUP.md**](docs/setup/firebase-setup.md) | Administrators | Step-by-step setup for Firebase Realtime Database rules, Google Authentication, and authorized domains. |
 | [**LICENSE_SYSTEM.md**](docs/setup/license-activation.md) | Buyers & Webmasters | Standalone HTML DJB2 Hex generator usage, Blogger Theme Setup camouflage, and activation steps. |
