@@ -142,11 +142,18 @@ flowchart TD
 
 ---
 
-## 💬 Support & Community
+## 🌐 Official Socials & Community
 
-Need assistance or have customization questions?
-- **Telegram Support**: [@ayengcoding](https://t.me/ayengcoding)
-- **Official Discussion Group**: [ABEFILM Group](https://t.me/abefilmgroup)
+Connect with Ayeng Coding for the latest updates, theme releases, tutorials, and community support:
+
+| Platform | Channel / Account | Link |
+| :--- | :--- | :--- |
+| ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) | `ayengcoding` | [github.com/ayengcoding](https://github.com/ayengcoding) |
+| ![Telegram](https://img.shields.io/badge/Telegram_Direct-26A5E4?style=flat-square&logo=telegram&logoColor=white) | Direct Support (`@ayengcoding`) | [t.me/ayengcoding](https://t.me/ayengcoding) |
+| ![Telegram](https://img.shields.io/badge/Telegram_Channel-26A5E4?style=flat-square&logo=telegram&logoColor=white) | Official Broadcast Channel | [t.me/ayeng_coding](https://t.me/ayeng_coding) |
+| ![Telegram](https://img.shields.io/badge/Telegram_Group-26A5E4?style=flat-square&logo=telegram&logoColor=white) | Community Discussion Group | [t.me/ayengcodingofficial](https://t.me/ayengcodingofficial) |
+| ![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat-square&logo=facebook&logoColor=white) | Official Facebook Profile | [facebook.com/acohcayeng](https://www.facebook.com/acohcayeng) |
+| ![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white) | Official Instagram | [instagram.com/acoh_cariel](https://www.instagram.com/acoh_cariel/) |
 
 ---
 
