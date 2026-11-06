@@ -54,15 +54,7 @@ The codebase of the **iForum Premium** template is composed of the following lan
 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | **21.8%** | Glassmorphism Aesthetics, Dark & Light Mode Variables, Custom Badges, Responsive Mobile Flex/Grid Layouts, Animations |
 | ![HTML / XML](https://img.shields.io/badge/Blogger%20XML-E34F26?style=for-the-badge&logo=html5&logoColor=white) | **13.3%** | Blogger V3 Modular Layout Widgets, Dynamic Post Tags, Microdata SEO Schema, PWA Web App Manifest |
 
-```
-JavaScript       [=========================================] 64.9%
-CSS3             [==============                           ] 21.8%
-HTML/Blogger XML [========                                 ] 13.3%
-```
-
 ---
-
-
 
 ## 🚀 Core Architectural Highlights
 
