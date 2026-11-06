@@ -44,7 +44,7 @@
 
 ---
 
-## ðŸ’» Theme Code & Language Stack Breakdown
+## 💻 Theme Code & Language Stack Breakdown
 
 The codebase of the **iForum Premium** template is composed of the following language distribution (analyzed from `iForum Premium.xml`):
 
