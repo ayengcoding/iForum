@@ -278,6 +278,14 @@
       gap: 24px;
       height: 44px;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+    .doc-header-tabs::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+      width: 0;
+      height: 0;
     }
 
     .header-tab {
@@ -824,7 +832,7 @@
       display: none;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 90px;
+      padding: 90px 20px 20px;
     }
 
     .search-modal-backdrop.open {
@@ -1014,6 +1022,14 @@
       }
       .doc-pager-btn.next {
         text-align: right;
+      }
+      .search-modal-backdrop {
+        padding: 50px 16px 20px !important;
+      }
+      .search-modal {
+        width: 100% !important;
+        margin: 0 auto !important;
+        border-radius: 14px !important;
       }
     }
 
