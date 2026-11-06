@@ -148,20 +148,7 @@
       letter-spacing: -0.02em;
     }
 
-    .brand-logo-box {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      background: linear-gradient(135deg, #ef4444 0%, #e11d48 100%);
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 13px;
-      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.3);
-      position: relative;
-    }
+    .brand-logo-img { width: 28px; height: 28px; border-radius: 7px; object-fit: contain; display: inline-block; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
 
     .header-pill-btn {
       display: inline-flex;
@@ -934,7 +921,7 @@
     <div class="doc-header-top">
       <div class="header-left">
         <a href="#" onclick="loadDoc('intro'); return false;" class="brand-link">
-          <span class="brand-logo-box">iF</span>
+          <img class="brand-logo-img" src="assets/logo.png" alt="iForum Logo" />
           <span>iForum</span>
         </a>
         <a href="https://github.com/ayengcoding/iForum/releases/tag/v2.4.0" target="_blank" class="header-pill-btn">
@@ -2112,3 +2099,4 @@
   </script>
 </body>
 </html>
+
